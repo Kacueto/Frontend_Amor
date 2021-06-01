@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/estilos.css">
+  <title>Crear Publicacion</title>
+
+
+</head>
+
+<body>
+
+  <header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./img/logo.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+          AMOR
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          </ul>
+          <form class="d-flex">
+
+            <button type="button" class="btn btn-danger">Cerrar sesion</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container mt-3">
+
+    <div class="row  justify-content-center">
+      <div class="col-8 border ">
+
+        <form id="formulario">
+
+          <div class="col-8 mb-2">
+            <label for="formFile" class="form-label">Imagen:</label>
+            <input class="form-control" type="file" id="image" accept="image/*" enctype="multipart / form-data">
+          </div>
+          <div class="d-grid gap-3 col-8">
+            
+            <h1 class="btn btn-success" onClick="uploadImage()" >
+              
+              Actualizar
+              
+            </h1>
+
+          </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+  </div>
+  <script>
+    function uploadImage() {
+      let e=document.getElementById("image")
+      var file = document.getElementById("image").files[0];
+      let reader = new FileReader();
+      reader.onload = (e) => {
+        let image = e.target.result;
+        console.log(image);
+      };
+      reader.readAsDataURL(file);
+
+    }
+  </script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
